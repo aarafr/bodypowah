@@ -1,0 +1,172 @@
+html, body {
+  box-sizing: border-box;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  height: 100vh;
+  width: 100%;
+}
+body {
+  display: grid;
+  grid-template-areas: 
+  "boven       boven     boven"
+  "inhoud      inhoud    social"
+  "bodem       bodem     bodem";
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  grid-template-columns: max-content;
+  max-width: 100rem;
+  margin: auto;
+  overflow-x: hidden;
+}
+img{
+  width: 150px;
+  height: 150px;
+}
+header{
+  grid-area: boven;
+  
+}
+.socials{
+  margin: auto;
+  padding: auto;
+}
+.titel{
+  display: flex;
+  background-color: white;
+  opacity: 50%;
+  border-radius: 5px;
+  width: auto;
+  padding: 10px;
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+}
+h1{
+  color: black;
+  text-align: center;
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  height: 150px;
+  bottom: 20rem;
+}
+aside {
+  grid-area: social;
+  border-radius: 0 5px 5px 0;
+  background-color: red;
+}
+.zoekbar{
+  display: flex;
+  opacity: 50%;
+  width: 350px;
+  border-radius: 18px;
+  height: 35px;
+  margin: 75px;
+  padding-left: 25px;
+}
+.navigatie{
+  display: flex;
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  justify-content: right;
+  padding: 5rem 3rem 5rem 5rem;
+}
+
+.navigatie :nth-child(2){
+  border-left: solid gray;
+  border-right: solid gray;
+  height: 40px;
+}
+.navigatie li a{
+  float: right;
+  display: block;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  border-right: 1px;
+  border-style: solid right;
+  border-color: rgb(56, 54, 54);
+  min-width: 60px;
+  
+}
+main {
+  grid-area: inhoud;
+  background-color: red;
+  width: auto;
+  border-radius: 5px 0 0 5px;
+  padding: 10px;
+  
+}
+section{
+  background-color: white;
+  color: black;
+  border-radius: 8px;
+  padding: 10px;
+  margin: auto;
+
+}
+footer {
+  grid-area: bodem;
+  color: white;
+
+}
+span{
+  color: orangered;
+}
+li a:hover{
+  background-color: rgb(45, 48, 45);
+
+  animation: myGlowAnimation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes myGlowAnimation {
+  50%{text-shadow: 5px 5px 10px red;}
+}
+
+/* Media Query*/
+
+@media screen and (max-width:960px)  {
+    body{
+        display: grid;
+        grid-template-areas:
+        "boven"
+        "inhoud"
+        "social"  
+        "bodem";
+
+    }
+    header {
+        grid-area: boven;
+        width: 500px;
+        flex-direction: column;
+      }
+      footer {
+        grid-area: bodem;
+        flex-direction: column;
+      }
+      .socials{
+        grid-area: social;
+      }
+      .zoekbar{
+        display: flex;
+        width: 150px;
+        border-radius: 18px;
+        height: 35px;
+        margin: 75px;
+        padding-left: 10px;
+      }
+      .navigatie li a{
+        flex-direction: row;
+        
+      }      
+
+      
+
+}
